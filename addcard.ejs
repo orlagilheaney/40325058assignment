@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trade the Cart</title>
+    <link rel="stylesheet" href="mystyle.css">
+
+
+   
+</head>
+<body>
+
+ <header>
+        
+    <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/expansions">Expansions</a></li>
+        <li><a href="/cards">Cards</a></li>
+        <li><a href="/mycollection">My Collection</a></li>
+        <li><a href="/addcard">Add Card</a></li>
+        <li style="float:right"><a class="active" href="/login">Login</a></li>
+        <li style="float:right"><a class="active" href="/signup">Signup</a></li>
+      </ul>
+
+        <nav class="header">
+
+                <h1>Trade the Cart</h1>
+
+        </nav>
+        
+     
+ </header>
+ <main>
+    <div class="container">
+        <form action="/signup" method="POST" role="form" class="my1" >
+        <h2>Add Card to the Collection</h2>
+        <p>Please fill in this form.</p>
+        <hr>
+    
+        <label for="card_name"><b>Card Name</b></label>
+        <input type="text" placeholder="Enter Card Name" name="card_name" required>
+    
+        <label for="HP"><b>HP</b></label>
+        <input type="text" placeholder="Enter HP" name="HP" required>
+    
+        <label for="type"><b>Type</b></label>
+        <input type="text" placeholder="Enter Type" name="type" required>
+
+        <label for="evolve_stage"><b>Evovle Stage</b></label>
+        <input type="text" placeholder="Enter Evolve Stage" name="evolve_stage" required>
+
+        <label for="description"><b>Description</b></label>
+        <input type="text" placeholder="Description" name="description" required>
+
+        <label for="rarity"><b>Rarity</b></label>
+        <input type="text" placeholder="Rarity" name="rarity" required>
+
+        <label for="card_num"><b>Card Number</b></label>
+        <input type="number" placeholder="Enter Card Number" name="card_num" required>
+
+        <label for="price"><b>Price</b></label>
+        <input type="decimal" placeholder="Enter Price" name="price" required>
+    
+        <div class="clearfix">
+            <button type="button" class="cancelbtn">Cancel</button>
+            <button type="submit" class="signupbtn">Add Card</button>
+          </div>
+        </form>
+
+ </main>
+ </body>
+
+ </html>

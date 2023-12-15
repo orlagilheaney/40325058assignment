@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trade the Cart</title>
+    <link rel="stylesheet" href="mystyle.css">
+
+   
+</head>
+<body>
+
+ <header>
+        
+    <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/expansions">Expansions</a></li>
+        <li><a href="/cards">Cards</a></li>
+        <li><a href="/mycollection">My Collection</a></li>
+        <li><a href="/addcard">Add Card</a></li>
+        <li style="float:right"><a class="active" href="/login">Login</a></li>
+        <li style="float:right"><a class="active" href="/signup">Signup</a></li>
+      </ul>
+
+
+        <nav class="header">
+
+                <h1>Trade the Cart</h1>
+
+        </nav>
+        
+     
+ </header>
+
+ <main>
+
+    <h4>Card Details</h4>
+
+    <% cards.forEach(card => { %>
+        <div>
+            
+            <img width="400px" src="<%= card.image %>" alt="Card Image">
+            
+            <h5>Name: <%= card.name %></h5>
+            <h5>Description: <%= card.description %></h5>
+            <h5>Card HP:<%= card.HP %></h5>
+            <h5>Card Type: <%= card.type %></h5>
+            <h5>Evolve Stage: <%= card.evolve_stage %></h5>
+            <h5>Rarity: <%= card.rarity %></h5>
+            <h5>Price: £<%= card.price %></h5>
+            
+            
+        </div>
+        
+    <% }); %>
+
+  </main>
+
+  </body>
+
+  </html>

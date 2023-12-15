@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trade the Cart</title>
+    <link rel="stylesheet" href="mystyle.css">
+   
+</head>
+<body>
+
+ <header>
+        
+    <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/expansions">Expansions</a></li>
+        <li><a href="/cards">Cards</a></li>
+        <li><a href="/mycollection">My Collection</a></li>
+        <li><a href="/addcard">Add Card</a></li>
+        <li style="float:right"><a class="active" href="/login">Login</a></li>
+        <li style="float:right"><a class="active" href="/signup">Signup</a></li>
+      </ul>
+        <nav class="header">
+
+                <h1>Trade the Cart</h1>
+
+        </nav>
+
+
+        
+     
+ </header>
+
+
+ <main>
+   
+    <% expansions.forEach((expansions)=> {%>
+        
+
+      <div>
+        <div class="grid-container">
+    <table>
+         <th> <img width="200px" src="<%= expansions.image %>"> </th>
+          <span>
+             <td> <b> <%= expansions.set_name %></b> </td>
+              
+          </span>
+          <td><a href="/viewseries?set_id=<%= expansions.expansion_Id %>">View Series</a></td>
+      </div>
+      <hr>
+
+  <% }) ; %>
+ </main>
+
+</body>
+</html>

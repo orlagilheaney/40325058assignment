@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trade the Cart</title>
+    <link rel="stylesheet" href="mystyle.css">
+
+
+   
+</head>
+<body>
+
+ <header>
+        
+    <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/expansions">Expansions</a></li>
+        <li><a href="/cards">Cards</a></li>
+        <li><a href="/mycollection">My Collection</a></li>
+        <li><a href="/addcard">Add Card</a></li>
+        <li style="float:right"><a class="active" href="/login">Login</a></li>
+        <li style="float:right"><a class="active" href="/signup">Signup</a></li>
+      </ul>
+
+        <nav class="header">
+
+                <h1>Trade the Cart</h1>
+
+        </nav>
+        
+     
+ </header>
+<main>
+
+    <h2>Browse the Full Collection</h2>
+
+
+<label for="categoryDropdown">Filter by Rarity:</label>
+    <select id="categoryDropdown" onchange="filterCards()">
+        <option value="all">All Cards</option>
+        <% const categories = Array.from(new Set(cards.map(cards => cards.rarity))); %>
+        <% categories.forEach(rarity => { %>
+            <option value="<%= rarity %>"><%= rarity %></option>
+        <% }); %>
+    </select>
+
+    <% cards.forEach(cards => { %>
+
+    <div class="grid-container">
+        <div class="table">
+        
+            
+            <div class="card" data-category="<%= cards.rarity %>">
+                <table>
+                   <th> <img width="200px" src="<%= cards.image %>">
+                    <span>
+                        <div class="tile">
+                <div class="h3">
+                <b><%= cards.card_name %></b>
+                </div>
+                <p><%= cards.rarity %></p>
+                </div>
+                <a href="/carddetails?card_id=<%= cards.card_id %>"><button class="button2">Card Details</button></a>
+            </div>
+        </span>
+    </div>
+</table>
+        
+            </div>
+            
+        <% }); %>
+    
+
+
+
+  
+
+      <script>
+
+function filterCards() {
+    var selectedCategory = document.getElementById("categoryDropdown").value;
+    var cards = document.getElementsByClassName("card");
+
+    // Show or hide cards based on the selected category
+    for (var i = 0; i < cards.length; i++) {
+        var cardCategory = cards[i].getAttribute("data-category");
+        if (selectedCategory === "all" || selectedCategory === cardCategory) {
+            cards[i].style.display = "block";
+        } else {
+            cards[i].style.display = "none";
+        }
+    }
+}
+        
+  
+        </script>
+
+
+  
+
+   </main>
+
+</body>
+
+</html>
